@@ -3,3 +3,5 @@ import "./styles/tailwind.css";
 import "./styles/prosemirror.css";
 
 export { default as Editor } from "./ui/editor";
+
+export { default as SlashCommand } from "./ui/editor/extensions/slash-command";

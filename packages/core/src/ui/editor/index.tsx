@@ -214,7 +214,9 @@ export default function Editor({
     >
       <div
         onClick={() => {
-          editor?.chain().focus().run();
+          // PAS removed because it steals focus from inputs in node view components.
+          // Condition somehow?
+          // editor?.chain().focus().run();
         }}
         className={className}
       >
