@@ -109,9 +109,9 @@ export const defaultExtensions = [
   }),
   Placeholder.configure({
     placeholder: ({ node }) => {
-      // if (node.type.name === "heading") {
-      //   return `Heading ${node.attrs.level}`;
-      // }
+      if (node.type.name === "heading") {
+        return `Heading ${node.attrs.level}`;
+      }
       return "Press '/' for commands, or '++' for AI autocomplete...";
     },
     includeChildren: true,

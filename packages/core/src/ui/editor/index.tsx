@@ -96,7 +96,12 @@ export default function Editor({
   }, debounceDuration);
 
   const editor = useEditor({
-    extensions: [...defaultExtensions, ...extensions],
+    extensions: defaultExtensions
+      .filter(
+        (defaultExt) =>
+          !extensions.map((cur) => cur.name).includes(defaultExt.name)
+      )
+      .concat(extensions),
     editorProps: {
       ...defaultEditorProps,
       ...editorProps,
