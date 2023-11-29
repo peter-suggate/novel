@@ -25,6 +25,7 @@ export default function Editor({
   editorProps = {},
   onUpdate = () => {},
   onDebouncedUpdate = () => {},
+  onEditorCreated = () => {},
   debounceDuration = 750,
   storageKey = "novel__content",
   disableLocalStorage = false,
@@ -67,6 +68,12 @@ export default function Editor({
   // eslint-disable-next-line no-unused-vars
   onDebouncedUpdate?: (editor?: EditorClass) => void | Promise<void>;
   /**
+   * A callback function when the editor is created.
+   * Defaults to () => {}.
+   */
+  // eslint-disable-next-line no-unused-vars
+  onEditorCreated?: (editor?: EditorClass) => void | Promise<void>;
+  /**
    * The duration (in milliseconds) to debounce the onDebouncedUpdate callback.
    * Defaults to 750.
    */
@@ -105,6 +112,9 @@ export default function Editor({
     editorProps: {
       ...defaultEditorProps,
       ...editorProps,
+    },
+    onCreate: (e) => {
+      onEditorCreated(e.editor);
     },
     onUpdate: (e) => {
       const selection = e.editor.state.selection;
