@@ -96,17 +96,18 @@ export const defaultExtensions = [
     addProseMirrorPlugins() {
       return [UploadImagesPlugin()];
     },
+    name: "upload-image",
   }).configure({
     allowBase64: true,
     HTMLAttributes: {
       class: "novel-rounded-lg novel-border novel-border-stone-200",
     },
   }),
-  UpdatedImage.configure({
-    HTMLAttributes: {
-      class: "novel-rounded-lg novel-border novel-border-stone-200",
-    },
-  }),
+  // UpdatedImage.configure({
+  //   HTMLAttributes: {
+  //     class: "novel-rounded-lg novel-border novel-border-stone-200",
+  //   },
+  // }),
   Placeholder.configure({
     placeholder: ({ node }) => {
       if (node.type.name === "heading") {
