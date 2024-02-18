@@ -211,8 +211,10 @@ export default function Editor({
     const value = disableLocalStorage ? defaultValue : content;
 
     if (value) {
-      editor.commands.setContent(value);
-      setHydrated(true);
+      queueMicrotask(() => {
+        editor.commands.setContent(value);
+        setHydrated(true);
+      });
     }
   }, [editor, defaultValue, content, hydrated, disableLocalStorage]);
 
