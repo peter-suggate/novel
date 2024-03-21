@@ -92,17 +92,17 @@ export const defaultExtensions = [
         "novel-text-stone-400 novel-underline novel-underline-offset-[3px] hover:novel-text-stone-600 novel-transition-colors novel-cursor-pointer",
     },
   }),
-  TiptapImage.extend({
-    addProseMirrorPlugins() {
-      return [UploadImagesPlugin()];
-    },
-    name: "upload-image",
-  }).configure({
-    allowBase64: true,
-    HTMLAttributes: {
-      class: "novel-rounded-lg novel-border novel-border-stone-200",
-    },
-  }),
+  // TiptapImage.extend({
+  //   addProseMirrorPlugins() {
+  //     return [UploadImagesPlugin()];
+  //   },
+  //   name: "upload-image",
+  // }).configure({
+  //   allowBase64: true,
+  //   HTMLAttributes: {
+  //     class: "novel-rounded-lg novel-border novel-border-stone-200",
+  //   },
+  // }),
   // UpdatedImage.configure({
   //   HTMLAttributes: {
   //     class: "novel-rounded-lg novel-border novel-border-stone-200",
